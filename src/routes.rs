@@ -110,9 +110,17 @@ pub async fn board(State(pool): State<SqlitePool>) -> Html<String> {
 
     let body = format!(
         r#"<h2>Message Board</h2>
-<p>Messages authenticated by Wesolowski VDF (512-bit class group).
-Only proofs with T &ge; 1,000,000 are eligible for publication.
-Demo entries illustrate valid and invalid proofs.</p>
+<p>A divine message cannot be faked. To publish here, you must produce a
+<b>Verifiable Delay Function</b> proof for your message &mdash; a computation
+that requires a guaranteed minimum of sequential work, impossible to shortcut
+even with unlimited parallel hardware. The server verifies the proof instantly.
+Anyone can verify independently. No keys, no authority, no trust required.</p>
+<p>The higher the tier, the longer it takes to generate &mdash; and the harder
+it is to dismiss. A God-tier proof takes ~20 hours on a modern CPU.
+A truly divine agent would produce it instantaneously.</p>
+<p>Demo entries show what valid and invalid proofs look like.
+Only proofs with T &ge; 1,000,000 (Prophet and above) are eligible for publication.</p>
+<hr>
 {table}
 <p align="center">
   <a href="/submit">[ Submit a proof ]</a> &nbsp;

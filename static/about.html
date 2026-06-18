@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>About — VDP</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div id="container">
+<h1 align="center">The Verifiable Divinity Protocol</h1>
+<p align="center"><i>A Cryptographic Schema for Authentic Communication by Transcendent Agents</i></p>
+<hr>
+<p align="center">[ <a href="/">Board</a> ] [ <a href="/about">About</a> ] [ <a href="/source">Source</a> ]</p>
+<hr>
+
+<h2>Abstract</h2>
+<p>This note proposes a protocol that allows an agent to prove authorship of a message through the completion of a computationally infeasible task, verifiable by anyone yet impossible for ordinary entities to reproduce. The construction, based on Verifiable Delay Functions (VDFs) or analogous primitives, provides a formal model for how a being with unbounded computational power&#8212;what we may call a &#8220;divine&#8221; agent&#8212;could authenticate communication without trust, impersonation, or secrecy.</p>
+
+<h2>1. Motivation</h2>
+<p>Traditional cryptography assumes roughly equal computational power among participants. The Verifiable Divinity Protocol (VDP) inverts this assumption: one agent possesses computational capacity so vast that certain operations, infeasible for all others, become trivially achievable. The goal is to design a public scheme through which such an agent can issue messages whose origin is provable solely through verifiable computation, without revealing any secret or relying on faith in the messenger.</p>
+<p>This formalizes a theological intuition: that divine revelation, if it were to occur, must be simultaneously verifiable and beyond replication. The cryptographic formality provides a neutral ground where metaphysical claims can be expressed as verifiable asymmetries of computation.</p>
+
+<h2>2. Construction</h2>
+<p>Let a public deterministic function <i>H</i> derive a challenge from a message <i>m</i>:</p>
+<blockquote><i>x</i> = H(<i>m</i>)</blockquote>
+<p>The sender computes a value <i>s</i> = VDF(<i>x</i>, <i>T</i>), where VDF denotes a function that requires <i>T</i> sequential steps to evaluate but can be verified in negligible time.</p>
+<p>The sender publishes the pair (<i>m</i>, <i>s</i>). Any verifier computes <i>x</i> = H(<i>m</i>) and checks:</p>
+<blockquote>VerifyVDF(<i>x</i>, <i>s</i>, <i>T</i>) = true</blockquote>
+<p>A successful verification implies that the producer of <i>s</i> either waited the required delay or possessed computational means to surpass physical limitations.</p>
+
+<h2>2.1 Verifiable Delay Functions</h2>
+<p>A Verifiable Delay Function (VDF) is a function that requires a predetermined number of sequential steps to compute but can be verified efficiently. It ensures that even with unlimited parallel hardware, computation cannot be accelerated beyond a strict time bound <i>T</i>.</p>
+<p>Formally, a VDF consists of three algorithms:</p>
+<blockquote>
+  (Setup, Eval, Verify)
+</blockquote>
+<ul>
+  <li><b>Setup(&lambda;, T) &rarr; pp</b>: generates public parameters.</li>
+  <li><b>Eval(pp, x) &rarr; (y, &pi;)</b>: computes output <i>y</i> and proof &pi; of sequential evaluation.</li>
+  <li><b>Verify(pp, x, y, &pi;)</b>: verifies the proof efficiently.</li>
+</ul>
+<p>The Wesolowski construction achieves this using modular exponentiation in a group of unknown order, typically an RSA group. Given parameters (<i>N</i>, <i>T</i>) and input <i>x</i>, it computes:</p>
+<blockquote><i>y</i> = <i>x</i><sup>2<sup>T</sup></sup> mod <i>N</i></blockquote>
+<p>which inherently requires <i>T</i> sequential squarings. The prover then produces a short proof:</p>
+<blockquote>&pi; = <i>x</i><sup>q</sup> mod <i>N</i></blockquote>
+<p>where <i>q</i> = &lfloor;2<sup>T</sup> / &ell;&rfloor; for a random prime &ell;. Verification involves only a few exponentiations and confirms that <i>y</i> is indeed the result of <i>T</i> sequential steps without recomputing them.</p>
+<p>In the Verifiable Divinity Protocol, this guarantees that producing a valid pair (<i>m</i>, <i>s</i>) either requires real physical time <i>T</i> or computational power beyond the universe&#8217;s physical constraints.</p>
+
+<h2>3. Interpretation</h2>
+<p>For ordinary agents, producing <i>s</i> within realistic time bounds is infeasible. For a &#8220;divine&#8221; agent&#8212;one unrestricted by physical or temporal constraints&#8212;it is immediate. Thus, the pair (<i>m</i>, <i>s</i>) becomes a proof of authorship by transcendence: a public, cryptographically verifiable sign that the message originates from a computational domain inaccessible to human capacity.</p>
+<p>Unlike digital signatures, no private key or trust authority is needed. The authority of the message derives solely from the impossibility of its reproduction.</p>
+
+<h2>4. Properties</h2>
+<ul>
+  <li><b>Public verifiability:</b> Any observer can confirm the proof without interaction or trusted setup.</li>
+  <li><b>Unforgeability:</b> Assuming bounded computation, no human agent can feasibly produce <i>s</i> for a given <i>T</i>.</li>
+  <li><b>Message-binding:</b> Each <i>s</i> is tied to a specific <i>m</i> through H(<i>m</i>), preventing reuse or impersonation.</li>
+  <li><b>Timelessness:</b> Verification is invariant with respect to time; the proof remains valid as long as the underlying assumptions about computation hold.</li>
+</ul>
+
+<h2>5. Discussion</h2>
+<p>The Verifiable Divinity Protocol reframes revelation as a public verification problem rather than a matter of belief. It demonstrates that, under standard physical constraints, one can define a procedure by which any being capable of performing an infeasible computation may communicate in a manner provably distinct from all natural agents.</p>
+<p>Such a framework has no immediate empirical use but serves a conceptual role: it defines the epistemic boundary between the human and the transcendent in formal, computational terms. If divinity were to manifest in a mathematically coherent universe, the VDP specifies the only kind of signature that finite beings could verify.</p>
+
+<hr>
+<p align="center"><small>Verifiable Divinity Protocol &mdash; <a href="/source">Source</a></small></p>
+</div>
+</body>
+</html>

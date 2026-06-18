@@ -1,0 +1,93 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 16px;
+}
+
+#container {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+a:link    { color: #0000EE; }
+a:visited { color: #551A8B; }
+a:active  { color: #FF0000; }
+
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.2em; border-bottom: 1px solid #999; padding-bottom: 4px; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    background-color: #c0c0c0;
+    padding: 4px 8px;
+}
+td {
+    padding: 4px 8px;
+    vertical-align: top;
+}
+
+input[type="text"] {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    border: 1px solid #000;
+    padding: 2px 4px;
+}
+
+select {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    border: 1px solid #000;
+}
+
+input[type="submit"] {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    background-color: #c0c0c0;
+    border: 2px outset #999;
+    padding: 2px 12px;
+    cursor: pointer;
+}
+
+code {
+    font-size: 0.8em;
+    word-break: break-all;
+}
+
+pre {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px;
+    overflow-x: auto;
+    font-size: 0.85em;
+}
+
+.valid {
+    color: #006600;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.invalid {
+    color: #cc0000;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #999;
+    margin: 12px 0;
+}
+
+blockquote {
+    border-left: 3px solid #999;
+    margin-left: 16px;
+    padding-left: 12px;
+    color: #333;
+}

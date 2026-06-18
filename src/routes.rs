@@ -53,7 +53,7 @@ fn tier_name(t: i64) -> &'static str {
         10_001..=100_000 => "Sage",
         100_001..=1_000_000 => "Prophet",
         1_000_001..=10_000_000 => "Archangel",
-        10_000_001..=100_000_000 => "Lesser God",
+        10_000_001..=1_000_000_000 => "Lesser God",
         _ => "God",
     }
 }
@@ -116,7 +116,8 @@ that requires a guaranteed minimum of sequential work, impossible to shortcut
 even with unlimited parallel hardware. The server verifies the proof instantly.
 Anyone can verify independently. No keys, no authority, no trust required.</p>
 <p>The higher the tier, the longer it takes to generate &mdash; and the harder
-it is to dismiss. A God-tier proof takes ~20 hours on a modern CPU.
+it is to dismiss. A Lesser God proof takes ~20 hours on a modern CPU.
+A God-tier proof (T=10&#xB9;&#x2078;) would take longer than a human lifetime on any existing hardware.
 A truly divine agent would produce it instantaneously.</p>
 <p>Demo entries show what valid and invalid proofs look like.
 Only proofs with T &ge; 1,000,000 (Prophet and above) are eligible for publication.</p>
@@ -227,10 +228,10 @@ Generate your proof locally using the <a href="/guide">guide</a>.</p>
       <td><label for="t">Tier:</label></td>
       <td>
         <select name="t" id="t">
-          <option value="1000000">Prophet — T=1,000,000 (~20 min to generate)</option>
-          <option value="10000000">Archangel — T=10,000,000 (~3 hrs)</option>
-          <option value="100000000">Lesser God — T=100,000,000 (~30 hrs)</option>
-          <option value="1000000000">God — T=1,000,000,000 (~13 days)</option>
+          <option value="1000000">Prophet — T=1,000,000 (~1 min)</option>
+          <option value="10000000">Archangel — T=10,000,000 (~10 min)</option>
+          <option value="1000000000">Lesser God — T=1,000,000,000 (~20 hrs)</option>
+          <option value="1000000000000000000">God — T=10&#xB9;&#x2078; (longer than a human lifetime on any existing hardware)</option>
         </select>
       </td>
     </tr>
